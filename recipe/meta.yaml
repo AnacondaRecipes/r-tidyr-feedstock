@@ -1,4 +1,4 @@
-{% set version = '0.7.1' %}
+{% set version = '0.7.2' %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,7 +12,7 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/tidyr_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/tidyr/tidyr_{{ version }}.tar.gz
-  sha256: b9c2430c72fe66c65a6aa83d835d3ea333ab09391c58ae0d57fd98e45088d1a1
+  sha256: 062cea2e2b57fffd500e4ce31cba6d593e65684fc0897ea49ea38d257c76009c
 
 
   # patches:
@@ -32,6 +32,7 @@ build:
 requirements:
   build:
     - r-base
+    - {{ compiler('c') }}        # [not win]
     - {{ compiler('cxx') }}      # [not win]
     - {{native}}toolchain        # [win]
     - {{posix}}filesystem        # [win]
@@ -88,7 +89,7 @@ extra:
 
 # Package: tidyr
 # Title: Easily Tidy Data with 'spread()' and 'gather()' Functions
-# Version: 0.7.1
+# Version: 0.7.2
 # Authors@R: c( person("Hadley", "Wickham", , "hadley@rstudio.com", c("aut", "cre")), person("Lionel", "Henry", , "lionel@rstudio.com", "aut"), person("RStudio", role = "cph") )
 # Description: An evolution of 'reshape2'. It's designed specifically for data tidying (not general reshaping or aggregating) and works well with 'dplyr' data pipelines.
 # Depends: R (>= 3.1.0)
@@ -102,11 +103,11 @@ extra:
 # LinkingTo: Rcpp
 # RoxygenNote: 6.0.1
 # NeedsCompilation: yes
-# Packaged: 2017-08-24 14:15:41 UTC; lionel
+# Packaged: 2017-10-16 13:20:18 UTC; hadley
 # Author: Hadley Wickham [aut, cre], Lionel Henry [aut], RStudio [cph]
 # Maintainer: Hadley Wickham <hadley@rstudio.com>
 # Repository: CRAN
-# Date/Publication: 2017-09-01 15:15:47 UTC
+# Date/Publication: 2017-10-16 23:09:23 UTC
 
 # See
 # http://docs.continuum.io/conda/build.html for

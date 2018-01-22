@@ -10,8 +10,8 @@ package:
 source:
   fn: tidyr_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/tidyr_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/tidyr/tidyr_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/tidyr_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/tidyr/tidyr_{{ version }}.tar.gz
   sha256: 062cea2e2b57fffd500e4ce31cba6d593e65684fc0897ea49ea38d257c76009c
 
 
